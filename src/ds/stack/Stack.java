@@ -15,15 +15,28 @@ public class Stack {
 	
 	public void push(long value)
 	{
+		if(isFull())
+		{
+			System.out.println("This stack is already Full");
+		}
+		else
+		{
 		top++;
 		stackArray[top] = value;
+		}
 	}
 	
 	public long pop()
 	{
+		if(isEmpty()) {
+			System.out.println("Stack is already Empty");
+			return -1;
+		}
+		else {
 		int last_top = top;
 		top--;
 		return stackArray[last_top];
+		}
 	}
 	
 	public long peak()
